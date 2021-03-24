@@ -49,8 +49,21 @@ Small.args = {
   label: 'Button',
 };
 
-export const Fit = Template.bind({});
-Small.args = {
-  size: 's',
+export const Full = Template.bind({});
+Full.args = {
   label: 'Button',
+  width: 'full'
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  label: 'Button',
+  icon: true,
+  iconPosition: 'left',
+};
+
+export const OnlyIcon = Template.bind({});
+OnlyIcon.args = {
+  icon: true,
+  iconPosition: 'left',
 };

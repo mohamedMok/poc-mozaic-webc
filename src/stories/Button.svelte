@@ -2,7 +2,9 @@
   import './button.css';
   import { createEventDispatcher } from 'svelte';
   // import { Device_Desktop_24px } from '@mozaic-ds/icons/svg/';
-  import Device_Desktop from '@mozaic-ds/icons/svg/Device_Desktop_24px.svg';
+  import Icon from './Icon.svelte';
+  import Icons from './assets/icons.json';
+  // import Colors from './assets/colors.svg';
 
   /**
    * Button size
@@ -22,6 +24,9 @@
   */
   export let width = '';
 
+  export let icon;
+  export let iconPosition;
+
   const dispatch = createEventDispatcher();
 
   /**
@@ -32,11 +37,27 @@
   }
 </script>
 
-
+<style>
+  @import "settings-tools/_all-settings";
+  @import "components/c.button";
+</style>
 <button
   type="button"
   class={['mc-button', `mc-button--${size}`, `mc-button--${theme}`, `mc-button--${width}`].join(' ')}
   on:click={onClick}>
-  <!-- <img src={Device_Desktop} alt="svg" /> -->
-  {label}
+  {#if icon }
+    {#if iconPosition == 'left' }
+      <Icon class="mc-button__icon" width={"32px"} height={"32px"} viewBox={"32px"} data={Icons.screen}/>
+    {/if}
+  {/if}
+
+  {#if label }
+      {label}
+  {/if}
+  {#if icon }
+    {#if iconPosition == 'right' }
+      <Icon class="mc-button__icon" width={"32px"} height={"32px"} viewBox={"32px"} data={Icons.screen}/>
+    {/if}
+  {/if}
 </button>
+
