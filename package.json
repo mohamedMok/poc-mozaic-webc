@@ -33,6 +33,7 @@
     "babel-loader": "^8.2.2",
     "jest": "^26.6.3",
     "jest-transform-svelte": "^2.1.1",
+    "postcss-load-config": "^3.0.1",
     "rollup": "^2.3.4",
     "rollup-plugin-copy-assets": "^2.0.3",
     "rollup-plugin-css-only": "^3.1.0",
@@ -49,8 +50,10 @@
     "@mozaic-ds/tokens": "^1.4.0",
     "@mozaic-ds/web-fonts": "^1.0.1",
     "@rollup/plugin-image": "^2.0.6",
+    "@rollup/plugin-json": "^4.1.0",
     "rollup-plugin-svelte-svg": "^0.2.3",
-    "sirv-cli": "^1.0.0"
+    "sirv-cli": "^1.0.0",
+    "svelte-preprocess": "^4.7.0"
   },
   "jest": {
     "transform": {

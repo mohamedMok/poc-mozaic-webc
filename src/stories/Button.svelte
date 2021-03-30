@@ -1,5 +1,7 @@
+<svelte:options tag="mc-button" />
+
 <script>
-  import './button.css';
+  // import './button.css';
   import { createEventDispatcher } from 'svelte';
   // import { Device_Desktop_24px } from '@mozaic-ds/icons/svg/';
   import Icon from './Icon.svelte';
@@ -32,19 +34,19 @@
   /**
    * Optional click handler
    */
-  function onClick(event) {
-    dispatch('click', event);
-  }
+  // function onClick(event) {
+  //   dispatch('click', event);
+  // }
 </script>
 
-<style>
+<style lang="scss">
   @import "settings-tools/_all-settings";
   @import "components/c.button";
 </style>
+
 <button
   type="button"
-  class={['mc-button', `mc-button--${size}`, `mc-button--${theme}`, `mc-button--${width}`].join(' ')}
-  on:click={onClick}>
+  class={['mc-button', `mc-button--${size}`, `mc-button--${theme}`, `mc-button--${width}`].join(' ')}>
   {#if icon }
     {#if iconPosition == 'left' }
       <Icon class="mc-button__icon" width={"32px"} height={"32px"} viewBox={"32px"} data={Icons.screen}/>
@@ -60,4 +62,5 @@
     {/if}
   {/if}
 </button>
+
 
